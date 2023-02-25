@@ -1,0 +1,219 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', sans-serif;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(./imagens/d50aa240-81da-410d-8b40-e9262d806ba0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    /*pra deixar fundo suave */
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toogle,
+[id^=drop] {
+    display: none;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    background-color: #444;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 900;
+}
+
+nav::after {}
+
+nav ul {
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    float: left;
+    background-color: #444;
+    display: inline-block;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 15px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    ;
+}
+
+nav ul li ul li:hover {
+    background-color: black;
+}
+
+nav a:hover {
+    background-color: black;
+}
+
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+
+}
+
+nav ul li:hover>ul {
+    display: inherit;
+
+}
+
+nav ul ul li {
+    display: list-item;
+    width: 170px;
+    float: none;
+    position: relative;
+}
+
+
+
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 170px;
+}
+
+
+li>a:after {
+    content: " . +";
+}
+
+
+li>a:only-child::after {
+    content: " ";
+}
+
+
+@media all and (max-width: 768px) {
+    .container {
+        display: block;
+    }
+
+    .logo {
+        float: left;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .btn-menu {
+        float: left;
+        cursor: pointer;
+        height: 60px;
+        padding: 0 15px !important;
+        display: flex !important;
+        align-items: center;
+    }
+
+    nav {
+        margin: 0;
+    }
+
+    .toogle+a,
+    .menu {
+        display: none;
+    }
+
+    .toogle{
+        display: flex;
+        align-items: center;
+        background-color: #444;
+        color:#fff;
+        font-size: 14px;
+        text-decoration: none;
+        border: 0;
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .toogle:hover{
+        background-color: black;
+    }
+
+    [id^=drop]:checked + ul{
+display: block
+    }
+nav ul li {
+    display: block;
+    width: 100%;
+}
+
+nav a:hover,
+nav ul ul ul a {
+    background-color: black;
+}
+
+nav ul li ul li .toogle,
+nav ul ul a,
+nav ul ul ul a  {
+    color: #fff;
+
+}
+nav ul ul {
+    float: none;
+    position: static;
+    color: #fff;
+}
+ nav ul ul li:hover > ul,
+ nv ul li:hover > ul{
+    display: none;
+
+ }
+ nav ul ul li{
+   display: block;
+   width: 100%;
+    
+ }
+
+ nav ul ul ul li {
+    position: static;
+ }
+}
